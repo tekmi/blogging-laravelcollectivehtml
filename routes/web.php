@@ -13,4 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('home', 'HomeController@index');
+Route::match(['get', 'post'], 'user', 'HomeController@user');
